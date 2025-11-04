@@ -1,0 +1,609 @@
+:root {
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --success: #4cc9f0;
+    --danger: #f72585;
+    --warning: #f8961e;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --low-priority: #38b000;
+    --medium-priority: #ff9e00;
+    --high-priority: #e63946;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для страниц аутентификации */
+.auth-body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-header h1 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: var(--gray);
+}
+
+.auth-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+}
+
+.form-group small {
+    color: var(--gray);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.alert {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-error {
+    background: rgba(247, 37, 133, 0.1);
+    color: var(--danger);
+    border: 1px solid rgba(247, 37, 133, 0.2);
+}
+
+.auth-footer {
+    text-align: center;
+    color: var(--gray);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Основные стили приложения */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.header {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info h1 {
+    font-size: 1.8rem;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.date-display {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.input-section {
+    padding: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #eaeaea;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#taskInput:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+#prioritySelect {
+    padding: 15px;
+    border: 2px solid #eaeaea;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+    width: 150px;
+}
+
+#addBtn {
+    padding: 15px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addBtn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.filter-section {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eaeaea;
+    background: #f8f9fa;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+#clearCompletedBtn {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.tasks-section {
+    padding: 20px;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    border-left: 4px solid var(--primary);
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    border-left-color: var(--success);
+}
+
+.task-item.priority-low {
+    border-left-color: var(--low-priority);
+}
+
+.task-item.priority-medium {
+    border-left-color: var(--medium-priority);
+}
+
+.task-item.priority-high {
+    border-left-color: var(--high-priority);
+}
+
+.task-checkbox {
+    margin-right: 15px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 16px;
+    word-break: break-word;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+.task-priority {
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.priority-low .task-priority {
+    background: var(--low-priority);
+}
+
+.priority-medium .task-priority {
+    background: var(--medium-priority);
+}
+
+.priority-high .task-priority {
+    background: var(--high-priority);
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.delete-btn {
+    color: var(--danger);
+}
+
+.delete-btn:hover {
+    background: rgba(247, 37, 133, 0.1);
+}
+
+.edit-btn {
+    color: var(--primary);
+}
+
+.edit-btn:hover {
+    background: rgba(67, 97, 238, 0.1);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+}
+
+.empty-state i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.empty-state.hidden {
+    display: none;
+}
+
+.stats {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.footer {
+    padding: 15px;
+    text-align: center;
+    background: var(--dark);
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+#editTaskInput {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #eaeaea;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#editPrioritySelect {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #eaeaea;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#saveEditBtn {
+    background: var(--primary);
+    color: white;
+}
+
+#cancelEditBtn {
+    background: var(--gray);
+    color: white;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    body, .auth-body {
+        padding: 10px;
+    }
+    
+    .container, .auth-card {
+        border-radius: 15px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .user-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #prioritySelect {
+        width: 100%;
+    }
+    
+    #addBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .filter-section {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-actions {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Специальные стили для чекбокса */
+input[type="checkbox"] {
+    accent-color: var(--primary);
+}
+
+/* Стили для кнопок */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+}
